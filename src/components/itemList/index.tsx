@@ -1,20 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { ListItem } from "../../components";
+import { SearchQueryContext } from '../../contexts';
 import { requests } from "../../service";
 import { Container } from './styles';
-import { ListItem } from "../../components"
+
 
 export function ItemList() {
 
+    const { searchQuery } = useContext(SearchQueryContext)
     const [data, setData] = useState<any[]>([]);
 
-    useEffect(() => { getData() }, []);
+    useEffect(() => { getData() }, [searchQuery])
 
     async function getData() {
         try {
-            const res = await requests.getShows(1);
-            setData(res);
+            let res;
 
-            console.log(res);
+            if (!searchQuery)
+                res = await requests.getShows();
+            else
+                res = await requests.getShowsQuery(searchQuery);
+
+            setData(res)
+            
         } catch (error: any) {
             alert(error.message);
         }
@@ -23,7 +31,7 @@ export function ItemList() {
     return (
         <Container>
             {
-                data.map((item) => <ListItem key={item.id} item={item}/>)
+                data.map((item) => <ListItem key={item.id} item={item} />)
             }
         </Container>
     )
