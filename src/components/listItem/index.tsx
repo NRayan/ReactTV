@@ -1,4 +1,4 @@
-import { Container } from './styles';
+import { Container, Thumbnail, Title, TitleContainer } from './styles';
 
 type Props = {
     item: any
@@ -6,7 +6,10 @@ type Props = {
 export function ListItem({ item }: Props) {
     return (
         <Container>
-            <h1>{item.id}</h1>
+            <Thumbnail src={item.image.medium} />
+            <TitleContainer>
+                <Title>{item.name}</Title>
+            </TitleContainer>
         </Container>
     )
 }
