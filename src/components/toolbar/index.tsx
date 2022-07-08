@@ -13,7 +13,7 @@ export function Toolbar() {
             <ButtonsContainer >
                 <Button onClick={handleButtonClick}>All</Button>
                 <Button onClick={handleButtonClick}>Movies</Button>
-                <Button onClick={handleButtonClick}>Series</Button>
+                <Button onClick={handleButtonClick}>TV Shows</Button>
             </ButtonsContainer>
         </Container>
     )

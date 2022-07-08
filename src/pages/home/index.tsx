@@ -1,15 +1,15 @@
-import { ItemList, SearchBar, Toolbar } from '../../components'
-import { Container, Subtitle, Title } from './styles'
+import { BrowserRouter } from 'react-router-dom';
+import { Toolbar } from '../../components';
+import { MyRoutes } from '../../routes';
+import { Container } from './styles';
 
 export function Home() {
-
-  return (
-    <Container>
-      <Toolbar />
-      <Title>ReactTV</Title>
-      <Subtitle>Search for your favorite movies and TV shows. 😉<br />feel free to look up the code, provided data by TVmaze.com</Subtitle>
-      <SearchBar />
-      <ItemList />
-    </Container>
-  )
+    return (
+        <BrowserRouter>
+            <Container>
+                <Toolbar />
+                <MyRoutes />
+            </Container>
+        </BrowserRouter>
+    )
 }
