@@ -1,19 +1,18 @@
+import { useNavigate } from "react-router-dom"
 import LogoSVG from "../../assets/logo.svg"
 import { Button, ButtonsContainer, Container, Image } from "./styles"
 
 export function Toolbar() {
 
-    function handleButtonClick() {
-        alert("Button Clicked")
-    }
+    const navigate = useNavigate();
 
     return (
         <Container>
             <Image src={LogoSVG} alt="logo" />
             <ButtonsContainer >
-                <Button onClick={handleButtonClick}>All</Button>
-                <Button onClick={handleButtonClick}>Movies</Button>
-                <Button onClick={handleButtonClick}>TV Shows</Button>
+                <Button onClick={()=>navigate("ReactTV/")}>TV Shows</Button>
+                <Button onClick={()=>navigate("ReactTV/Favorites")}>Favorites</Button>
+                <Button onClick={()=>navigate("ReactTV/About")}>About</Button>
             </ButtonsContainer>
         </Container>
     )

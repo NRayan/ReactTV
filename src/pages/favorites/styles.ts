@@ -10,8 +10,3 @@ export const Title = styled.h1`
     font-size: 48px;
     font-weight: 600;
 `;
-
-export const Subtitle = styled.h3`
-    color: ${({ theme }) => theme.colors.text};
-    margin-bottom: 50px;
-`;

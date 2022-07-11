@@ -8,7 +8,7 @@ export const Container = styled.div`
     padding: 15px;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 50px;
+    margin: 50px 0;
 `;
 
 export const Icon = styled.img`

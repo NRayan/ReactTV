@@ -1,12 +1,11 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { All, Movies, TVShows } from "../pages";
+import { Route, Routes } from 'react-router-dom';
+import { TVShows,Favorites } from "../pages";
 
 export function MyRoutes() {
     return (
-            <Routes>
-                <Route path='ReactTV/' element={<All />} />
-                <Route path="ReactTV/movies" element={<Movies />} />
-                <Route path="ReactTV/tvshows" element={<TVShows />} />
-            </Routes>
+        <Routes>
+            <Route path='ReactTV/' element={<TVShows />} />
+            <Route path="ReactTV/favorites" element={<Favorites />} />
+        </Routes>
     )
 }
