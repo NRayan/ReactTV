@@ -14,7 +14,7 @@ export function ListItem({ item }: props) {
 
 
     function handleItemClick() {
-        navigate(`Details/${item.id}`)
+        navigate(`/ReactTV/Details/${item.id}`, { replace: false })
     }
 
     return (

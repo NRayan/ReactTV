@@ -4,10 +4,10 @@ import { About, Details, Favorites, TVShows } from "../pages";
 export function MyRoutes() {
     return (
         <Routes>
-            <Route path='/' element={<TVShows />} />
-            <Route path="/Favorites" element={<Favorites />} />
-            <Route path="/About" element={<About />} />
-            <Route path="/Details/:id" element={<Details />} />
+            <Route path='ReactTV/' element={<TVShows />} />
+            <Route path="ReactTV/Favorites" element={<Favorites />} />
+            <Route path="ReactTV/About" element={<About />} />
+            <Route path="ReactTV/Details/:id" element={<Details />}/>
         </Routes>
     )
 }
