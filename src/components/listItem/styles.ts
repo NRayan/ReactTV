@@ -9,6 +9,7 @@ export const Container = styled.div`
     border-radius: 10px;
     padding: 10px 10px 0;
     position: relative;
+    cursor: pointer;
 `;
 
 export const Thumbnail = styled.img`

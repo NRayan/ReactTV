@@ -1,27 +1,34 @@
+import { lighten } from "polished";
 import { useContext, useEffect, useState } from "react";
-import SearchSVG from "../../assets/search.svg";
+import { BiSearch } from "react-icons/bi";
+import { IoClose } from 'react-icons/io5';
+import { useTheme } from "styled-components";
 import { SearchQueryContext } from "../../contexts";
-import { Container, Icon, Input } from './styles';
+import { Container, Input } from './styles';
 
-type props =
-    {
-        placeholder: string
-    }
-
-export function SearchBar({placeholder}:props) {
+export function SearchBar() {
 
     const { setSearchQuery } = useContext(SearchQueryContext);
     const [query, setQuery] = useState("");
+    const { colors: { primary, secondary } } = useTheme();
 
     useEffect(() => {
         const timeOutId = setTimeout(() => setSearchQuery(query), 700);
         return () => clearTimeout(timeOutId);
     }, [query]);
 
+    function handleClearInputClick() {
+        setQuery("");
+    }
+
     return (
         <Container>
-            <Icon src={SearchSVG} />
-            <Input placeholder={placeholder} onChange={(e => setQuery(e.target.value))} />
+            <BiSearch color={lighten(.1, secondary)} size={24} />
+            <Input placeholder="Search TV Shows" value={query} onChange={(e => setQuery(e.target.value))} />
+            {
+                query &&
+                <IoClose color={primary} size={24} onClick={handleClearInputClick} cursor="pointer" />
+            }
         </Container>
     )
 }

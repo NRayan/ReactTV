@@ -1,11 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
-import { TVShows,Favorites } from "../pages";
+import { About, Details, Favorites, TVShows } from "../pages";
 
 export function MyRoutes() {
     return (
         <Routes>
-            <Route path='ReactTV/' element={<TVShows />} />
-            <Route path="ReactTV/favorites" element={<Favorites />} />
+            <Route path='/' element={<TVShows />} />
+            <Route path="/Favorites" element={<Favorites />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Details/:id" element={<Details />} />
         </Routes>
     )
 }

@@ -10,9 +10,9 @@ export function Toolbar() {
         <Container>
             <Image src={LogoSVG} alt="logo" />
             <ButtonsContainer >
-                <Button onClick={()=>navigate("ReactTV/")}>TV Shows</Button>
-                <Button onClick={()=>navigate("ReactTV/Favorites")}>Favorites</Button>
-                <Button onClick={()=>navigate("ReactTV/About")}>About</Button>
+                <Button onClick={() => navigate("/")}>TV Shows</Button>
+                <Button onClick={() => navigate("/Favorites")}>Favorites</Button>
+                <Button onClick={() => navigate("/About")}>About</Button>
             </ButtonsContainer>
         </Container>
     )
