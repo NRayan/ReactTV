@@ -31,23 +31,6 @@ export const Title = styled.h2`
 
 export const RateContainer = styled.div`
     position: absolute;
-    flex-direction: row;
-    align-items: center;
     left: 25px;
     top: 25px;
-    background-color: rgba(0,0,0,.7);
-    border-radius: 10px;
-    padding: 5px 10px;
-`;
-
-export const Rate = styled.h3`
-    font-size: 14px;
-    color: #FFAD49;
-   
-`;
-
-export const Icon = styled.img`
-    height: 15px;
-    width: 15px;
-    margin-right: 3px;
 `;

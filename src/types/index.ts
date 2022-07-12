@@ -10,5 +10,8 @@ export type Show =
             medium: string,
             original: string
         },
-        summary: string
+        summary: string,
+        premiered:string,
+        language:string,
+        status:string
     }
