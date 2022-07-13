@@ -7,6 +7,7 @@ align-items: center;
 `;
 
 export const ContentContainer = styled.div`
+flex: 1;
 padding: 0 10%;
 flex-direction: row;
 align-items: flex-start;
@@ -14,14 +15,35 @@ justify-content: space-between;
 column-gap: 4%;
 `;
 
-export const ThumbImage = styled.img`
+export const ThumbContainer = styled.div`
     width: 40%;
     aspect-ratio: 0.7;
-    border-radius: 10px;
+    border-radius: 10px; 
+    overflow: hidden;
+    position: relative;
+`;
+
+export const ThumbImage = styled.img`
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 `;
 
+export const FavoriteContainer = styled.button`
+    display: flex;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.7);
+    border-radius: 100%;
+    right: 5%;
+    top: 5%;
+`;
+
 export const DetailsContainer = styled.div`
+    flex: 1;
     align-items: flex-start;
     row-gap: 20px;
 `;

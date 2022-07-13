@@ -11,7 +11,9 @@ export type Show =
             original: string
         },
         summary: string,
-        premiered:string,
-        language:string,
-        status:string
+        premiered: string,
+        language: string,
+        status: string
     }
+
+export type Favorites = number[];

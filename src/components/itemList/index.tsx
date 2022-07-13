@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import { ListItem } from "../../components";
-import { SearchQueryContext } from '../../contexts';
+import { ShowsContext } from '../../context';
 import { requests } from "../../service";
 import { Container } from './styles';
 
 
 export function ItemList() {
 
-    const { searchQuery } = useContext(SearchQueryContext)
+    const { searchQuery } = useContext(ShowsContext)
     const [data, setData] = useState<any[]>([]);
 
     useEffect(() => { getData() }, [searchQuery])
@@ -22,7 +22,7 @@ export function ItemList() {
                 res = await requests.getShowsQuery(searchQuery);
 
             setData(res)
-            
+
         } catch (error: any) {
             alert(error.message);
         }

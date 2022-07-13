@@ -1,28 +1,41 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { HiHeart, HiOutlineHeart } from "react-icons/hi";
 import { useParams } from 'react-router-dom';
 import { ActivityIndicator, RatingTag } from '../../components';
+import { ShowsContext } from '../../context';
 import { requests } from '../../service';
 import { Show } from '../../types';
 import { noImageURL, removeHTMLTags } from '../../utils';
-import { Container, ContentContainer, DetailsContainer, Label, LabelValueContainer, Summary, ThumbImage, Title, Value } from './styles';
+import { Container, ContentContainer, DetailsContainer, FavoriteContainer, Label, LabelValueContainer, Summary, ThumbContainer, ThumbImage, Title, Value } from './styles';
 
 export function Details() {
 
     const { id } = useParams();
+    const showId = parseInt(id?id:"");
+
     const [show, setShow] = useState<Show>({} as Show);
+    const [isFavorite, setIsFavorite] = useState<boolean>(false);
+    
+    const { addFavorite, removeFavorite, getFavorites } = useContext(ShowsContext);
+
+    useEffect(() => { getShow() }, []);
 
     async function getShow() {
         try {
-            if (!id) return;
-            const response = await requests.getById(id);
+            const response = await requests.getById(showId);
+            const favorites = getFavorites();
+            setIsFavorite(favorites.includes(showId))
             setShow(response);
-            console.log(response)
+
         } catch (error: any) {
             alert(error.message);
         }
     }
 
-    useEffect(() => { getShow() }, []);
+    function toogleFavorite() {
+        isFavorite ? removeFavorite(showId) : addFavorite(showId);
+        setIsFavorite(prevState => !prevState);
+    }
 
     return (
         <Container>
@@ -31,7 +44,19 @@ export function Details() {
                     <ActivityIndicator />
                     :
                     <ContentContainer>
-                        <ThumbImage src={show.image?.original ? show.image.original : noImageURL} />
+
+                        <ThumbContainer>
+                            <ThumbImage src={show.image?.original ? show.image.original : noImageURL} />
+                            <FavoriteContainer onClick={toogleFavorite}>
+                                {
+                                    isFavorite ?
+                                        <HiHeart size={32} color="#EE3555" />
+                                        :
+                                        <HiOutlineHeart size={26} color="#EE3555" />
+                                }
+                            </FavoriteContainer>
+                        </ThumbContainer>
+
                         <DetailsContainer>
 
                             <Title>{show.name}</Title>
@@ -66,8 +91,8 @@ export function Details() {
                                 <Value>{show.status}</Value>
                             </LabelValueContainer>
 
-
                         </DetailsContainer>
+
                     </ContentContainer>
             }
         </Container>

@@ -20,7 +20,7 @@ export const requests =
             throw error;
         }
     },
-    async getById(id: string): Promise<Show> {
+    async getById(id: number): Promise<Show> {
         try {
             const response = await requester.get(`shows/${id}`);
             return shortenShow(response.data);

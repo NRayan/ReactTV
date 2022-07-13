@@ -3,12 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { IoClose } from 'react-icons/io5';
 import { useTheme } from "styled-components";
-import { SearchQueryContext } from "../../contexts";
+import { ShowsContext } from "../../context";
 import { Container, Input } from './styles';
 
 export function SearchBar() {
 
-    const { setSearchQuery } = useContext(SearchQueryContext);
+    const { setSearchQuery } = useContext(ShowsContext);
     const [query, setQuery] = useState("");
     const { colors: { primary, secondary } } = useTheme();
 
