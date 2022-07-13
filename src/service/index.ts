@@ -6,7 +6,8 @@ export const requests =
     async getShows(): Promise<Show[]> {
         try {
             const response = await requester.get("shows");
-            return response.data.map(item => shortenShow(item));
+            const shows = response.data.map(item => shortenShow(item));
+            return shows;
         } catch (error) {
             throw error;
         }
@@ -24,6 +25,20 @@ export const requests =
         try {
             const response = await requester.get(`shows/${id}`);
             return shortenShow(response.data);
+        } catch (error) {
+            throw error;
+        }
+    },
+    async getFavorites(ids: number[]): Promise<Show[]> {
+        try {
+            let Favorites: Show[] = [];
+
+            for (let index = 0; index < ids.length; index++) {
+                const newData = await this.getById(ids[index]);
+                Favorites.push(newData);
+            }
+
+            return Favorites;
         } catch (error) {
             throw error;
         }

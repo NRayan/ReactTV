@@ -1,38 +1,34 @@
-import { useContext, useEffect, useState } from 'react';
-import { ListItem } from "../../components";
-import { ShowsContext } from '../../context';
+import { useEffect, useState } from 'react';
+import { List, ListItem, SearchBar } from "../../components";
 import { requests } from "../../service";
-import { Container } from './styles';
-
 
 export function ItemList() {
 
-    const { searchQuery } = useContext(ShowsContext)
     const [data, setData] = useState<any[]>([]);
+    const [showsQuery, setShowsQuery] = useState("");
 
-    useEffect(() => { getData() }, [searchQuery])
+    useEffect(() => {
+        const timeOutId = setTimeout(() => getData(), 500);
+        return () => clearTimeout(timeOutId);
+    }, [showsQuery]);
 
     async function getData() {
         try {
-            let res;
-
-            if (!searchQuery)
-                res = await requests.getShows();
-            else
-                res = await requests.getShowsQuery(searchQuery);
-
-            setData(res)
-
+            const response = !showsQuery ? await requests.getShows() : await requests.getShowsQuery(showsQuery);
+            setData(response)
         } catch (error: any) {
             alert(error.message);
         }
     }
 
     return (
-        <Container>
-            {
-                data.map((item) => <ListItem key={item.id} item={item} />)
-            }
-        </Container>
+        <>
+            <SearchBar query={showsQuery} setQuery={setShowsQuery} />
+            <List>
+                {
+                    data.map((item) => <ListItem key={item.id} item={item} />)
+                }
+            </List>
+        </>
     )
 }

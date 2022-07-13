@@ -1,18 +1,18 @@
+import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Show } from '../../types';
 import { noImageURL } from '../../utils';
 import { RatingTag } from '../ratingTag';
-import { Container, RateContainer, Thumbnail, Title, TitleContainer } from './styles';
+import { Container, Content, RateContainer, Thumbnail, Title, TitleContainer } from './styles';
 
 type props = {
     item: Show
 }
 
-export function ListItem({ item }: props) {
+export const ListItem = memo(({ item }: props) => {
 
     const imageSource = item.image?.medium ? item.image.medium : noImageURL;
     const navigate = useNavigate();
-
 
     function handleItemClick() {
         navigate(`/ReactTV/Details/${item.id}`, { replace: false })
@@ -20,18 +20,19 @@ export function ListItem({ item }: props) {
 
     return (
         <Container onClick={handleItemClick}>
-            <Thumbnail src={imageSource} />
-            <TitleContainer>
-                <Title>{item.name}</Title>
-            </TitleContainer>
+            <Content>
+                <Thumbnail src={imageSource} />
+                <TitleContainer>
+                    <Title>{item.name}</Title>
+                </TitleContainer>
 
-            {
-                item.rating.average &&
-                <RateContainer>
-                    <RatingTag value={item.rating.average} />
-                </RateContainer>
-            }
-
+                {
+                    item.rating.average &&
+                    <RateContainer>
+                        <RatingTag value={item.rating.average} />
+                    </RateContainer>
+                }
+            </Content>
         </Container>
     )
-}
+})

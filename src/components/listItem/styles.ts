@@ -2,19 +2,23 @@ import { transparentize } from "polished";
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 13vw;
-    min-width: 150px;
-    aspect-ratio: 0.6;
+    width: 100%;
     background-color: ${({ theme }) => transparentize(.5, theme.colors.secondary)};
     border-radius: 10px;
-    padding: 10px 10px 0;
     position: relative;
+    overflow: hidden;
     cursor: pointer;
 `;
 
+export const Content = styled.div`
+    flex: 1;
+    padding: 10px 10px 0;
+`;
+
 export const Thumbnail = styled.img`
-    height: 85%;
     width: 100%;
+    height: 85%;
+    aspect-ratio: 0.7;
     border-radius: 10px;
     object-fit: cover;
 `;

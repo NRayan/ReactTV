@@ -8,7 +8,7 @@ const spinAnimation = keyframes`
   100% { transform: rotate(360deg); }
 `
 
-export const Container = styled.div`
+export const SpinnerDiv = styled.div`
 align-self: center;
   border: ${borderSize}px solid ${({ theme }) => theme.colors.secondary}; 
   border-top: ${borderSize}px solid ${({ theme }) => theme.colors.primary};

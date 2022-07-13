@@ -5,11 +5,11 @@ import { Container } from './styles';
 
 export function Home() {
     return (
-        <BrowserRouter>
-            <Container>
-                <Toolbar />
-                <MyRoutes />
-            </Container>
-        </BrowserRouter>
+            <BrowserRouter>
+                <Container>
+                    <Toolbar />
+                    <MyRoutes />
+                </Container>
+            </BrowserRouter>
     )
 }

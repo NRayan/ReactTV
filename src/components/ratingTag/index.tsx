@@ -1,6 +1,5 @@
-import React from 'react';
+import { BiStar } from "react-icons/bi";
 import { Container, Rate } from './styles';
-import { BiStar } from "react-icons/bi"
 
 type props =
     {
@@ -10,7 +9,7 @@ type props =
 export function RatingTag({ value }: props) {
     return (
         <Container>
-            <BiStar color='#FFAD49'/>
+            <BiStar color='#FFAD49' />
             <Rate>{value}</Rate>
         </Container>
     )

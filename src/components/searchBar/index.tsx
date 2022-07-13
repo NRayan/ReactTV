@@ -3,19 +3,17 @@ import { useContext, useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { IoClose } from 'react-icons/io5';
 import { useTheme } from "styled-components";
-import { ShowsContext } from "../../context";
 import { Container, Input } from './styles';
 
-export function SearchBar() {
+type props =
+{
+    query:string,
+    setQuery:(value:string)=>void
+}
 
-    const { setSearchQuery } = useContext(ShowsContext);
-    const [query, setQuery] = useState("");
-    const { colors: { primary, secondary } } = useTheme();
+export function SearchBar({query,setQuery}:props) {
 
-    useEffect(() => {
-        const timeOutId = setTimeout(() => setSearchQuery(query), 700);
-        return () => clearTimeout(timeOutId);
-    }, [query]);
+    const { colors: { primary, secondary } } = useTheme();   
 
     function handleClearInputClick() {
         setQuery("");
