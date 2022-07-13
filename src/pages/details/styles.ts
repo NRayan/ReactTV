@@ -45,20 +45,34 @@ export const FavoriteContainer = styled.button`
 export const DetailsContainer = styled.div`
     flex: 1;
     align-items: flex-start;
-    row-gap: 20px;
+    row-gap: 5px;
+
+    @media(min-width:1080px)
+    {
+         row-gap: 15px;
+    }
 `;
 
 export const Title = styled.h1`
-    font-size: 34px;
+    font-size: 2.5vw;
+    @media(min-width:1080px)
+    {
+        font-size: 32px;
+    }
     color: ${({ theme }) => theme.colors.text};
     font-weight: 700;
 `;
 
 export const Summary = styled.h3`
-    font-size: 16px;
     color: ${({ theme }) => transparentize(.2, theme.colors.text)};
     font-weight: 300;
     line-height: 170%;
+    
+    font-size: 1.3vw;
+    @media(min-width:1080px)
+    {
+        font-size: 16px;
+    }
 `;
 
 export const LabelValueContainer = styled.div`
@@ -66,13 +80,21 @@ export const LabelValueContainer = styled.div`
 `;
 
 export const Label = styled.h3`
-    font-size: 14px;
     color: ${({ theme }) => transparentize(.3, theme.colors.text)};
     font-weight: 300;
+    font-size: 1.1vw;
+    @media(min-width:1080px)
+    {
+        font-size: 14px;
+    }
 `;
 
 export const Value = styled.h3`
-    font-size: 16px;
     color: ${({ theme }) => transparentize(.1, theme.colors.text)};
     font-weight: 400;
+    font-size: 1.3vw;
+    @media(min-width:1080px)
+    {
+        font-size: 16px;
+    }
 `;

@@ -29,8 +29,12 @@ export const TitleContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-    font-size: 16px;
+    font-size: 1.3vw;
     color: ${({ theme }) => transparentize(.1, theme.colors.text)};
+
+    @media (min-width:1580px) {
+        font-size: 16px;
+    }
 `;
 
 export const RateContainer = styled.div`

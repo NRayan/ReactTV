@@ -8,13 +8,15 @@ type props =
     }
 
 const maxColumns = 5;
+const minColumns = 3;
 
 export function List({ children }: props) {
     const { width } = useWindowDimensions();
 
     function generateColumns(): number {
-        const columnsQtd = Math.floor(width / 250);
-        return columnsQtd > maxColumns ? maxColumns : columnsQtd;
+        const division = Math.floor(width / 250);
+        const columnsQtd = Math.min(Math.max(division, minColumns), maxColumns);
+        return columnsQtd;
     }
 
     return (

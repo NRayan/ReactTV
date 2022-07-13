@@ -11,11 +11,11 @@ import { Container, ContentContainer, DetailsContainer, FavoriteContainer, Label
 export function Details() {
 
     const { id } = useParams();
-    const showId = parseInt(id?id:"");
+    const showId = parseInt(id ? id : "");
 
     const [show, setShow] = useState<Show>({} as Show);
     const [isFavorite, setIsFavorite] = useState<boolean>(false);
-    
+
     const { addFavorite, removeFavorite, getFavorites } = useContext(ShowsContext);
 
     useEffect(() => { getShow() }, []);
@@ -59,10 +59,11 @@ export function Details() {
 
                         <DetailsContainer>
 
-                            <Title>{show.name}</Title>
-
-                            <Summary>{removeHTMLTags(show.summary)}</Summary>
-
+                            <>
+                                <Title>{show.name}</Title>
+                                <Summary>{removeHTMLTags(show.summary)}</Summary>
+                            </>
+                            
                             {
                                 show.rating?.average &&
                                 <RatingTag value={show.rating.average} />

@@ -1,10 +1,11 @@
-import { ItemListFavorites, SearchBar } from '../../components';
-import { Container, Title } from './styles';
+import { ItemListFavorites } from '../../components';
+import { PageTitle } from '../../styles';
+import { Container } from './styles';
 
 export function Favorites() {
     return (
         <Container>
-            <Title>My Favorites</Title>
+            <PageTitle>My Favorites</PageTitle>
             <ItemListFavorites />
         </Container>
     )
