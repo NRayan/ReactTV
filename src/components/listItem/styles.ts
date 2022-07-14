@@ -6,13 +6,8 @@ export const Container = styled.div`
     background-color: ${({ theme }) => transparentize(.5, theme.colors.secondary)};
     border-radius: 10px;
     position: relative;
-    overflow: hidden;
-    cursor: pointer;
-`;
-
-export const Content = styled.div`
-    flex: 1;
     padding: 1.0rem 1.0rem 0;
+    cursor: pointer;
 `;
 
 export const Thumbnail = styled.img`
