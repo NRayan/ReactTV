@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import { BackgroundImage, Toolbar } from '../../components';
+import { Toolbar } from '../../components';
 import { MyRoutes } from '../../routes';
 import { Container } from './styles';
 
