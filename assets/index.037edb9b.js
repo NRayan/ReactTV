@@ -184,8 +184,9 @@ align-items: flex-start;
 justify-content: space-between;
 column-gap: 4%;
 `,Xy=W.div`
-    width: 40%;
     aspect-ratio: 0.7;
+    width: 40%;
+    max-height: 85vh;
     border-radius: 10px; 
     overflow: hidden;
     position: relative;
@@ -207,7 +208,7 @@ column-gap: 4%;
 `,Zy=W.div`
     flex: 1;
     align-items: flex-start;
-    row-gap: 5px;
+    row-gap: 1.5rem;
 `,qy=W.h1`
     font-size: 3.0rem;
     color: ${({theme:e})=>e.colors.text};
