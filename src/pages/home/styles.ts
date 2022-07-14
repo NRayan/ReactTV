@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+type props =
+    {
+        backgroundImagePath: string;
+    }
+export const Container = styled.div<props>`
     background-color: ${({ theme }) => theme.colors.background};
     flex: 1;
-    padding: ${({ theme }) => theme.paddings.vertical} ${({ theme }) => theme.paddings.horizontal};    
-    background-image: url(/ReactTV/src/assets/Background.png) ;
+    padding: ${({ theme }) => theme.paddings.vertical} ${({ theme }) => theme.paddings.horizontal};
+    background-image: ${({ backgroundImagePath }) => `url(${backgroundImagePath})`} ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
