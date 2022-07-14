@@ -1,15 +1,15 @@
 import { BrowserRouter } from 'react-router-dom';
-import { Toolbar } from '../../components';
+import { BackgroundImage, Toolbar } from '../../components';
 import { MyRoutes } from '../../routes';
 import { Container } from './styles';
 
 export function Home() {
     return (
+        <Container>
             <BrowserRouter>
-                <Container>
-                    <Toolbar />
-                    <MyRoutes />
-                </Container>
+                <Toolbar />
+                <MyRoutes />
             </BrowserRouter>
+        </Container>
     )
 }

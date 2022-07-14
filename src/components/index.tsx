@@ -1,8 +1,9 @@
-export { Toolbar } from "./toolbar";
-export { SearchBar } from "./searchBar";
+export { ActivityIndicator } from "./activityIndicator";
 export { ItemList } from "./itemList";
 export { ItemListFavorites } from "./itemListFavorites";
-export { ListItem } from "./listItem";
-export { ActivityIndicator } from "./activityIndicator";
-export { RatingTag } from "./ratingTag";
 export { List } from "./list";
+export { ListItem } from "./listItem";
+export { RatingTag } from "./ratingTag";
+export { SearchBar } from "./searchBar";
+export { Toolbar } from "./toolbar";
+

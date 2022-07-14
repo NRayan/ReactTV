@@ -5,7 +5,8 @@ export const requests =
 {
     async getShows(): Promise<Show[]> {
         try {
-            const response = await requester.get("shows");
+            const randomPage = Math.floor(Math.random() * (100 - 1 + 1) + 1)
+            const response = await requester.get(`shows?page=${randomPage}`);
             const shows = response.data.map(item => shortenShow(item));
             return shows;
         } catch (error) {

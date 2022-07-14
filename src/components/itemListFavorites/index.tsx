@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { List, ListItem, SearchBar } from "..";
+import { ActivityIndicator, List, ListItem, SearchBar } from "..";
 import { ShowsContext } from '../../context';
 import { requests } from "../../service";
 import { Show } from '../../types';
@@ -10,6 +10,7 @@ export function ItemListFavorites() {
     const [data, setData] = useState<Show[]>([]);
     const [showsQuery, setShowsQuery] = useState("");
     const { getFavorites } = useContext(ShowsContext);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => { getAllData() }, []);
 
@@ -17,8 +18,9 @@ export function ItemListFavorites() {
         try {
             const myFavorites = getFavorites();
             const response = await requests.getFavorites(myFavorites)
-            setallData(response)
-            setData(response)
+            setallData(response);
+            setData(response);
+            setLoading(false);
         } catch (error: any) {
             alert(error.message);
         }
@@ -35,11 +37,17 @@ export function ItemListFavorites() {
     return (
         <>
             <SearchBar query={showsQuery} setQuery={(newValue) => { setShowsQuery(newValue); filterData(newValue) }} />
-            <List>
-                {
-                    data.map((item) => <ListItem key={item.id} item={item} />)
-                }
-            </List>
+            {
+                loading ?
+                    <ActivityIndicator />
+                    :
+                    <List>
+                        {
+                            data.map((item) => <ListItem key={item.id} item={item} />)
+                        }
+                    </List>
+            }
+
         </>
     )
 }

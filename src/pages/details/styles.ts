@@ -7,7 +7,7 @@ align-items: center;
 `;
 
 export const ContentContainer = styled.div`
-flex: 1;
+width: 100%;
 flex-direction: row;
 align-items: flex-start;
 justify-content: space-between;

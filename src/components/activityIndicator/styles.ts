@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
-const size = 25;
-const borderSize = 6;
+const size = "4.5rem";
+const borderSize = "1rem";
 
 const spinAnimation = keyframes`
   0% { transform: rotate(0deg); }
@@ -9,11 +9,12 @@ const spinAnimation = keyframes`
 `
 
 export const SpinnerDiv = styled.div`
-align-self: center;
-  border: ${borderSize}px solid ${({ theme }) => theme.colors.secondary}; 
-  border-top: ${borderSize}px solid ${({ theme }) => theme.colors.primary};
+  margin-top:15rem;
+  align-self: center;
+  border: ${borderSize} solid ${({ theme }) => theme.colors.secondary}; 
+  border-top: ${borderSize} solid ${({ theme }) => theme.colors.primary};
   border-radius: 50%;
-  width: ${size}px;
-  height: ${size}px;
+  width: ${size};
+  height: ${size};
   animation: ${spinAnimation} 1s linear infinite;
 `;
