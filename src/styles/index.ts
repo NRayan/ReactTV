@@ -7,7 +7,7 @@ export const PageTitle = styled.h1`
     font-weight: 600;
 `;
 
-export const PageSubtitle = styled.h2`
+export const PageSubtitle = styled.p`
     color: ${({ theme }) => theme.colors.text};
     font-size: 2.0rem;
     font-weight: 300;

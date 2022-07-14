@@ -1,7 +1,9 @@
 import { transparentize } from "polished";
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.li`
+    display: flex;
+    flex-direction: column;
     width: 100%;
     background-color: ${({ theme }) => transparentize(.5, theme.colors.secondary)};
     border-radius: 10px;

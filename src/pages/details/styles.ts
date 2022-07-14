@@ -1,9 +1,8 @@
 import { transparentize } from "polished";
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.section`
 flex: 1;
-align-items: center;
 `;
 
 export const ContentContainer = styled.div`
@@ -48,13 +47,13 @@ export const DetailsContainer = styled.div`
     row-gap: 1.5rem;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
     font-size: 3.0rem;
     color: ${({ theme }) => theme.colors.text};
     font-weight: 700;
 `;
 
-export const Summary = styled.h3`
+export const Summary = styled.p`
     font-size: 1.5rem;
     color: ${({ theme }) => transparentize(.2, theme.colors.text)};
     font-weight: 300;
@@ -65,13 +64,13 @@ export const LabelValueContainer = styled.div`
 
 `;
 
-export const Label = styled.h3`
+export const Label = styled.p`
     color: ${({ theme }) => transparentize(.3, theme.colors.text)};
     font-weight: 300;
     font-size: 1.4rem;
 `;
 
-export const Value = styled.h3`
+export const Value = styled.p`
     color: ${({ theme }) => transparentize(.1, theme.colors.text)};
     font-weight: 400;
     font-size: 1.6rem;

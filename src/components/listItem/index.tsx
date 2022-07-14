@@ -20,7 +20,7 @@ export const ListItem = memo(({ item }: props) => {
 
     return (
         <Container onClick={handleItemClick}>
-            <Thumbnail src={imageSource} />
+            <Thumbnail src={imageSource} alt="TVShow thumbnail"/>
             <TitleContainer>
                 <Title>{item.name}</Title>
             </TitleContainer>

@@ -1,7 +1,8 @@
 import { transparentize } from "polished";
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.header`
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -14,12 +15,24 @@ export const Image = styled.img`
     width: 34px;
 `;
 
-export const ButtonsContainer = styled.div`
+export const NavigationContainer = styled.nav`
+    display: flex;
     flex-direction: row;
     column-gap: 20px;
 `;
 
-export const Button = styled.button`
+export const UnordernedList = styled.ul`
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+`;
+
+export const ListItem = styled.li`
+
+`;
+
+export const Button = styled.a`
+    cursor: pointer;
     color: ${({ theme }) => transparentize(.2, theme.colors.text)};
     font-size: 1.6rem;
 `;
