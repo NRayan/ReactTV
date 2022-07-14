@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-type containerProps =
-    {
-        columnQTD: number
-    }
-
-export const Container = styled.div<containerProps>`
+export const Container = styled.div`
     width: 100%;
     display: grid;
-    grid-template-columns: ${({ columnQTD }) => `repeat(${columnQTD}, 1fr)`};
-    gap: 1.5vw 
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    gap: 1.5vw;
+
+    @media(min-width:800px)
+    {
+        grid-template-columns: repeat(5,minmax(100px,1fr));
+    }
 `;

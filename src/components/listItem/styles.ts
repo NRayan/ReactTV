@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     flex: 1;
-    padding: 10px 10px 0;
+    padding: 1.0rem 1.0rem 0;
 `;
 
 export const Thumbnail = styled.img`
@@ -29,16 +29,12 @@ export const TitleContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-    font-size: 1.3vw;
+    font-size: 1.6rem;
     color: ${({ theme }) => transparentize(.1, theme.colors.text)};
-
-    @media (min-width:1580px) {
-        font-size: 16px;
-    }
 `;
 
 export const RateContainer = styled.div`
     position: absolute;
-    left: 25px;
-    top: 25px;
+    left: 2.5rem;
+    top: 2.5rem;
 `;

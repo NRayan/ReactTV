@@ -11,7 +11,6 @@ export function Toolbar() {
             <ButtonsContainer >
                 <Button onClick={() => navigate("ReactTV/")}>TV Shows</Button>
                 <Button onClick={() => navigate("ReactTV/Favorites")}>Favorites</Button>
-                <Button onClick={() => navigate("ReactTV/About")}>About</Button>
             </ButtonsContainer>
         </Container>
     )

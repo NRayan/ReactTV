@@ -4,11 +4,11 @@ import styled from "styled-components";
 export const Container = styled.div`
     align-self: flex-start;
     border: 1px solid ${({ theme }) => theme.colors.secondary};
-    border-radius: 10px;
+    border-radius: 7px;
     padding: 10px;    
     flex-direction: row;
     align-items: center;
-    margin: 6vh 0 5vh;
+    margin: 4.0rem 0 3.0rem;
 `;
 
 export const Icon = styled.img`
@@ -21,8 +21,8 @@ export const Input = styled.input`
     background-color: transparent;
     border: none;
     color: ${({ theme }) => theme.colors.text};
-    max-width: 250px;
-    font-size: 1.5vh;
+    max-width: 25rem;
+    font-size: 1.6rem;
 
     ::placeholder,
     ::-webkit-input-placeholder {
@@ -31,10 +31,5 @@ export const Input = styled.input`
 
     :-ms-input-placeholder {
      color: ${({ theme }) => lighten(.2, theme.colors.secondary)};
-    }
-
-    @media(min-width:1080px)
-    {
-        font-size: 16px;
     }
 `;

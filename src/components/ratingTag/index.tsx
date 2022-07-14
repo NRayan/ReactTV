@@ -9,7 +9,7 @@ type props =
 export function RatingTag({ value }: props) {
     return (
         <Container>
-            <BiStar color='#FFAD49' />
+            <BiStar color='#FFAD49' size="1.5rem" />
             <Rate>{value}</Rate>
         </Container>
     )

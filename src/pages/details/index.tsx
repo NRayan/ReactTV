@@ -50,9 +50,9 @@ export function Details() {
                             <FavoriteContainer onClick={toogleFavorite}>
                                 {
                                     isFavorite ?
-                                        <HiHeart size={32} color="#EE3555" />
+                                        <HiHeart size="3.0rem" color="#EE3555" />
                                         :
-                                        <HiOutlineHeart size={26} color="#EE3555" />
+                                        <HiOutlineHeart size="2.6rem" color="#EE3555" />
                                 }
                             </FavoriteContainer>
                         </ThumbContainer>
