@@ -15,8 +15,9 @@ column-gap: 4%;
 `;
 
 export const ThumbContainer = styled.div`
-    width: 40%;
     aspect-ratio: 0.7;
+    width: 40%;
+    max-height: 85vh;
     border-radius: 10px; 
     overflow: hidden;
     position: relative;
@@ -44,7 +45,7 @@ export const FavoriteContainer = styled.button`
 export const DetailsContainer = styled.div`
     flex: 1;
     align-items: flex-start;
-    row-gap: 5px;
+    row-gap: 1.5rem;
 `;
 
 export const Title = styled.h1`
