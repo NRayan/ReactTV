@@ -6,14 +6,14 @@ import { useTheme } from "styled-components";
 import { Container, Input } from './styles';
 
 type props =
-{
-    query:string,
-    setQuery:(value:string)=>void
-}
+    {
+        query: string,
+        setQuery: (value: string) => void
+    }
 
-export function SearchBar({query,setQuery}:props) {
+export function SearchBar({ query, setQuery }: props) {
 
-    const { colors: { primary, secondary } } = useTheme();   
+    const { colors: { primary, secondary } } = useTheme();
 
     function handleClearInputClick() {
         setQuery("");
@@ -21,12 +21,9 @@ export function SearchBar({query,setQuery}:props) {
 
     return (
         <Container>
-            <BiSearch color={lighten(.1, secondary)} size={24} />
+            <BiSearch color={lighten(.1, secondary)} size={"2.4rem"} />
             <Input placeholder="Search TV Shows" value={query} onChange={(e => setQuery(e.target.value))} />
-            {
-                query &&
-                <IoClose color={primary} size={24} onClick={handleClearInputClick} cursor="pointer" />
-            }
+            <IoClose color={primary} size={"2.4rem"} onClick={handleClearInputClick} cursor="pointer" opacity={query ? 1 : 0} />
         </Container>
     )
 }
